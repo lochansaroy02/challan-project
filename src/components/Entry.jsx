@@ -121,9 +121,7 @@ const Entry = ({ setData }) => {
 
             </div>
 
-            <div>
-                <h1>sum</h1>
-            </div>
+        
 
         </div>
 
