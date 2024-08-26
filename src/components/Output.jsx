@@ -9,6 +9,9 @@ const Output = ({ data }) => {
   const [grandTotal, setGrandTotal] = useState(0);
   const dataArr = data?.itemData || [];
 
+  const date = new Date();
+  let options = { year: 'numeric', month: 'short', day: 'numeric' };
+  let formattedDate = date.toLocaleDateString('en-US', options);
   let heading = [
     {
       srNo: 'Sr No',
@@ -40,7 +43,6 @@ const Output = ({ data }) => {
   }, [data]);
 
 
-
   const handleGenerate = () => {
     const element = pageRef.current;
     const options = {
@@ -55,6 +57,7 @@ const Output = ({ data }) => {
 
   return (
     <div className='h-full relative m-6' ref={pageRef}>
+    
       <div className='h-full m-6'>
         <div className='flex flex-col items-center'>
           <h2>CHALLAN CUM INVOICE</h2>
@@ -73,11 +76,11 @@ const Output = ({ data }) => {
             <p>{data?.customerAddress}</p>
           </div>
           <div className='w-full '>
-            <h1 className='border-b  p-2  w-full  border-black '>Date : </h1>
-            <h1 className='border-b p-2   w-full  border-black '>your order number </h1>
-            <h1 className='border-b  p-2  w-full  border-black '>Invoice number</h1>
-            <h1 className='border-b  p-2  w-full  border-black '> GRN no. </h1>
-            <h1 className='border-b  p-2  w-full  border-black '>vehical number</h1>
+            <h1 className='border-b  p-2 text-base w-full  border-black '>Date : {formattedDate} </h1>
+            <h1 className='border-b p-2  text-base w-full  border-black '>your order number :  {data?.order} </h1>
+            <h1 className='border-b  p-2 text-base w-full  border-black '>Invoice number: {data?.invoice} </h1>
+            <h1 className='border-b  p-2 text-base w-full  border-black '> GRN no. : {data?.grn} </h1>
+            <h1 className='  p-2 text-base w-full   '>vehicle number: {data?.vehicle} </h1>
           </div>
         </div>
 
