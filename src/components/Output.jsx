@@ -72,12 +72,12 @@ const Output = ({ data }) => {
             <h1>{data?.customerName}</h1>
             <p>{data?.customerAddress}</p>
           </div>
-          <div className='p-2 '>
-            <h1>Date : </h1>
-            <h1>your order number </h1>
-            <h1>Invoice number</h1>
-            <h1> GRN no. </h1>
-            <h1>vehical number</h1>
+          <div className='w-full '>
+            <h1 className='border-b  p-2  w-full  border-black '>Date : </h1>
+            <h1 className='border-b p-2   w-full  border-black '>your order number </h1>
+            <h1 className='border-b  p-2  w-full  border-black '>Invoice number</h1>
+            <h1 className='border-b  p-2  w-full  border-black '> GRN no. </h1>
+            <h1 className='border-b  p-2  w-full  border-black '>vehical number</h1>
           </div>
         </div>
 
